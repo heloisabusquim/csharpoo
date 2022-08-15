@@ -1,0 +1,15 @@
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/obj/Debug/net6.0/csharpoo.csproj.AssemblyReference.cache
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/obj/Debug/net6.0/csharpoo.GeneratedMSBuildEditorConfig.editorconfig
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/obj/Debug/net6.0/csharpoo.AssemblyInfoInputs.cache
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/obj/Debug/net6.0/csharpoo.AssemblyInfo.cs
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/obj/Debug/net6.0/csharpoo.csproj.CoreCompileInputs.cache
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/bin/Debug/net6.0/csharpoo
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/bin/Debug/net6.0/csharpoo.deps.json
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/bin/Debug/net6.0/csharpoo.runtimeconfig.json
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/bin/Debug/net6.0/csharpoo.dll
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/bin/Debug/net6.0/csharpoo.pdb
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/obj/Debug/net6.0/csharpoo.dll
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/obj/Debug/net6.0/refint/csharpoo.dll
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/obj/Debug/net6.0/csharpoo.pdb
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/obj/Debug/net6.0/csharpoo.genruntimeconfig.cache
+/home/heloisahb/Documentos/Estudos/CSharp/csharpoo/csharpoo/obj/Debug/net6.0/ref/csharpoo.dll
