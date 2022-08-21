@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace csharpoo.Delivery
+namespace Delivery
 {
-    public class Cliente
+    public class Contato
     {
         public string nomeCompleto { get; set; }
         public string cpf { get; set; }
-        public string email { get; set; }
         public string telefone { get; set; }
-        public Endereco endereco { get; set; }
+        public Endereco? endereco { get; set; }
 
-        public Cliente(string nomeCompleto, string cpf, string email, string telefone)
+        public Contato(string nomeCompleto, string cpf, string telefone)
         {
             this.nomeCompleto = nomeCompleto;
             this.cpf = cpf;
-            this.email = email;
             this.telefone = telefone;
             
+        }
+
+        public void DadosCliente()
+        {
+            Console.WriteLine("CLIENTE: " + nomeCompleto + " | CPF: " + cpf + " | Telefone: " + telefone);
         }
     }
 }

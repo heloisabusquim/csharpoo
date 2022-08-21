@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace csharpoo.Delivery
+namespace Delivery
 {
     public class Endereco
     {
@@ -23,6 +23,18 @@ namespace csharpoo.Delivery
             this.cidade = cidade;
             this.cep = cep;
             
+        }
+
+        public void Entrega()
+        {
+            if(complemento == "")
+            {
+            Console.WriteLine("ENTREGA: " + rua + ", " + numero + ", " + bairro + ", " + cidade + ", " + cep);
+            }
+            else
+            {
+                Console.WriteLine("ENTREGA: " + rua + ", " + numero + " - " + complemento + ", " + bairro + ", " + cidade + ", " + cep);
+            }
         }
 
     }
