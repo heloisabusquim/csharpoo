@@ -1,6 +1,10 @@
 ﻿using ByteBank;
 using ByteBank.titular;
 using ByteBank.titular.cliente;
+using ByteBank_ADM.Funcionarios;
+using ByteBank_ADM.Utilitario;
+using OperacoesMatematicas.Basicas;
+using OperacoesMatematicas.Utilitario;
 using Delivery;
 
 // //********************************************************************************************************
@@ -60,50 +64,85 @@ using Delivery;
 
 // Console.WriteLine("********************************************");
 
-//********************************************************************************************************
-//Testes OO Delivery
+// //********************************************************************************************************
+// //Testes OO Delivery
 
-Console.WriteLine("Boas vindas ao sistema de delivery!");
+// Console.WriteLine("Boas vindas ao sistema de delivery!");
 
-// //Populando produtos
-Produto combo1 = new Produto(1);
-Produto combo2 = new Produto(2);
-Produto combo3 = new Produto(3);
+// // //Populando produtos
+// Produto combo1 = new Produto(1);
+// Produto combo2 = new Produto(2);
+// Produto combo3 = new Produto(3);
 
-// //Populando clientes e endereços
-Contato cliente1 = new Contato("Helena Maria", "123.456.789-00", "(19)3456-2345");
-cliente1.endereco = new Endereco("Rua 15", "34A", "", "Jardim Souzas", "Americana", "13456-234");
+// // //Populando clientes e endereços
+// Contato cliente1 = new Contato("Helena Maria", "123.456.789-00", "(19)3456-2345");
+// cliente1.endereco = new Endereco("Rua 15", "34A", "", "Jardim Souzas", "Americana", "13456-234");
 
-Contato cliente2 = new Contato("Natasha Romanov", "987.654.321.00", "(19)3451-8769");
-cliente2.endereco = new Endereco("Rua 89", "234", "Apto 23-A", "Jardim Amaranto", "Sumaré", "15478-231");
+// Contato cliente2 = new Contato("Natasha Romanov", "987.654.321.00", "(19)3451-8769");
+// cliente2.endereco = new Endereco("Rua 89", "234", "Apto 23-A", "Jardim Amaranto", "Sumaré", "15478-231");
 
-//Recebendo pedidos
-//Pedido 1 - endereço sem complemento, quantidade = 1
-Pedido um = new Pedido();
-um.numeroComanda = 1;
-Console.WriteLine("Número da comanda: " + um.numeroComanda);
-um.cliente = cliente1;
-um.item = combo1;
-um.item.quantidadeSolicitada = 1;
-um.cliente.DadosCliente();
-um.cliente.endereco.Entrega();
-um.item.InfoCombos();
+// //Recebendo pedidos
+// //Pedido 1 - endereço sem complemento, quantidade = 1
+// Pedido um = new Pedido();
+// um.numeroComanda = 1;
+// Console.WriteLine("Número da comanda: " + um.numeroComanda);
+// um.cliente = cliente1;
+// um.item = combo1;
+// um.item.quantidadeSolicitada = 1;
+// um.cliente.DadosCliente();
+// um.cliente.endereco.Entrega();
+// um.item.InfoCombos();
 
-Console.WriteLine("********************************************");
+// Console.WriteLine("********************************************");
 
-//Pedido 2 - endereço com complemento, quantidade > 1
-Pedido dois = new Pedido();
-dois.numeroComanda = 2;
-Console.WriteLine("Número da comanda: " + dois.numeroComanda);
-dois.cliente = cliente2;
-dois.item = combo1;
-dois.item.quantidadeSolicitada = 1;
-dois.cliente.DadosCliente();
-dois.cliente.endereco.Entrega();
-dois.item.InfoCombos();
+// //Pedido 2 - endereço com complemento, quantidade > 1
+// Pedido dois = new Pedido();
+// dois.numeroComanda = 2;
+// Console.WriteLine("Número da comanda: " + dois.numeroComanda);
+// dois.cliente = cliente2;
+// dois.item = combo1;
+// dois.item.quantidadeSolicitada = 1;
+// dois.cliente.DadosCliente();
+// dois.cliente.endereco.Entrega();
+// dois.item.InfoCombos();
 
-/*IMPROVEMENTS:
-1- Criar método que gere número de comandas automaticamente, de forma sequencial e sem repetições;
-2- Criar uma forma do pedido poder ter mais itens distintos, não apenas um combo em específico;
-*/
+// /*IMPROVEMENTS:
+// 1- Criar método que gere número de comandas automaticamente, de forma sequencial e sem repetições;
+// 2- Criar uma forma do pedido poder ter mais itens distintos, não apenas um combo em específico;
+// */
 
+//**************************************************************************************************************
+
+//Herança e Polimorfismo
+
+//ByteBank_ADM
+Console.WriteLine("Boas vindas ao ByteBank Administrativo!");
+
+//Iniciando o gerenciador de bonificações
+GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
+
+//Gerando registro de funcionários
+Funcionario pedro = new Funcionario();
+pedro.nome = "Pedro Silva";
+pedro.cpf = "234.564.343-09";
+pedro.salario = 2000.00;
+
+Funcionario maria = new Diretor();
+maria.nome = "Maria Alencar";
+maria.cpf = "124.899.566.78";
+maria.salario = 5000.00;
+
+gerenciador.Registrar(pedro);
+gerenciador.Registrar(maria);
+
+Console.WriteLine("O total de bonificações é de: " + gerenciador.GetTotalBonificacao());
+
+// //*********************************************************************************************
+
+// //Operacoes Matematicas
+
+// Operacoes operacoes = new Operacoes();
+// Console.WriteLine("Somando valores... o resultado é:  " + operacoes.somar.Calcular(15,24));
+// Console.WriteLine("Subtraindo valores... o resultado é:  " + operacoes.subtrair.Calcular(10,56));
+// Console.WriteLine("Multiplicando valores... o resultado é:  " + operacoes.multiplicar.Calcular(87,198));
+// Console.WriteLine("Dividindo valores... o resultado é:  " + operacoes.dividir.Calcular(99,33));
