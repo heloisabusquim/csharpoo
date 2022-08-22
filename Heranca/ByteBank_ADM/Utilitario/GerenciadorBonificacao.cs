@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ByteBank_ADM.Funcionarios;
+using Heranca.ByteBank_ADM.Funcionarios;
 
-namespace ByteBank_ADM.Utilitario
+namespace Heranca.ByteBank_ADM.Utilitario
 {
     public class GerenciadorBonificacao
     {

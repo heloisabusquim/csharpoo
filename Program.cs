@@ -1,14 +1,17 @@
-﻿using ByteBank;
-using ByteBank.titular;
-using ByteBank.titular.cliente;
-using ByteBank_ADM.Funcionarios;
-using ByteBank_ADM.Utilitario;
-using OperacoesMatematicas.Basicas;
-using OperacoesMatematicas.Utilitario;
-using Delivery;
+﻿using OO.ByteBank;
+using OO.ByteBank.titular;
+using OO.ByteBank.titular.cliente;
+using Heranca.ByteBank_ADM.Funcionarios;
+using Heranca.ByteBank_ADM.Utilitario;
+using Heranca.OperacoesMatematicas.Basicas;
+using Heranca.OperacoesMatematicas.Utilitario;
+using OO.Delivery;
+using Heranca.Library;
 
 // //********************************************************************************************************
-// //Testes OO ByteBank
+// // O R I E N T A Ç Ã O  A  O B J E T O S 
+
+// //ByteBank
 
 // Console.WriteLine("Boas vindas ao banco ByteBank!");
 
@@ -65,7 +68,7 @@ using Delivery;
 // Console.WriteLine("********************************************");
 
 // //********************************************************************************************************
-// //Testes OO Delivery
+// //Delivery
 
 // Console.WriteLine("Boas vindas ao sistema de delivery!");
 
@@ -111,38 +114,55 @@ using Delivery;
 // 2- Criar uma forma do pedido poder ter mais itens distintos, não apenas um combo em específico;
 // */
 
-//**************************************************************************************************************
+// //**************************************************************************************************************
 
-//Herança e Polimorfismo
+// //H E R A N Ç A  E  C L A S S E  A B S T R A T A
 
-//ByteBank_ADM
-Console.WriteLine("Boas vindas ao ByteBank Administrativo!");
+// //ByteBank_ADM
+// Console.WriteLine("Boas vindas ao ByteBank Administrativo!");
 
-//Iniciando o gerenciador de bonificações
-GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
+// CalcularBonificação();
 
-//Gerando registro de funcionários
-Funcionario pedro = new Funcionario();
-pedro.nome = "Pedro Silva";
-pedro.cpf = "234.564.343-09";
-pedro.salario = 2000.00;
+// void CalcularBonificação()
+// {
+//     GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
 
-Funcionario maria = new Diretor();
-maria.nome = "Maria Alencar";
-maria.cpf = "124.899.566.78";
-maria.salario = 5000.00;
+//     Designer pedro = new Designer("Pedro Silva", "234.564.343-09");
 
-gerenciador.Registrar(pedro);
-gerenciador.Registrar(maria);
+//     Diretor maria = new Diretor("Maria Alencar", "124.899.566.78");
 
-Console.WriteLine("O total de bonificações é de: " + gerenciador.GetTotalBonificacao());
+//     Auxiliar jose = new Auxiliar("José Alves", "234.234.222.98");
+
+//     Gerente camila = new Gerente("Camila Oliveira", "345.678.543-32");
+
+//     gerenciador.Registrar(pedro);
+//     gerenciador.Registrar(maria);
+//     gerenciador.Registrar(jose);
+//     gerenciador.Registrar(camila);
+
+//     Console.WriteLine("O número de funcionários registrados é: " + Funcionario.TotalFuncionarios);
+//     Console.WriteLine("O total de bonificações é de: " + gerenciador.GetTotalBonificacao());
+// }
 
 // //*********************************************************************************************
 
-// //Operacoes Matematicas
+// //Operaçõess Matemáticas
 
 // Operacoes operacoes = new Operacoes();
 // Console.WriteLine("Somando valores... o resultado é:  " + operacoes.somar.Calcular(15,24));
 // Console.WriteLine("Subtraindo valores... o resultado é:  " + operacoes.subtrair.Calcular(10,56));
 // Console.WriteLine("Multiplicando valores... o resultado é:  " + operacoes.multiplicar.Calcular(87,198));
 // Console.WriteLine("Dividindo valores... o resultado é:  " + operacoes.dividir.Calcular(99,33));
+
+// //*************************************************************************************************
+
+// //Library
+// Fantasia lotr1 = new Fantasia("O Senhor dos Aneis: A Sociedade do Anel", "J. R. R. Tolkien", "9788533613379");
+// lotr1.anoPublicacao = 2010;
+// lotr1.numeroPaginas = 434;
+// lotr1.FichaLivro();
+
+// Fantasia lotr2 = new Fantasia("O Senhor dos Aneis: As duas Torres", "J. R. R. Tolkien", "9788533613386");
+// lotr2.FichaLivro();
+
+// Console.WriteLine("O número de livros registrados é: " + Livro.TotalLivrosRegistrados);

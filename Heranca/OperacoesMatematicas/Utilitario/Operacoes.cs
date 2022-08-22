@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using OperacoesMatematicas.Basicas;
+using Heranca.OperacoesMatematicas.Basicas;
 
-namespace OperacoesMatematicas.Utilitario
+namespace Heranca.OperacoesMatematicas.Utilitario
 {
     public class Operacoes
     {

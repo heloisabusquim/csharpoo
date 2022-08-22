@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OperacoesMatematicas.Basicas
+namespace Heranca.OperacoesMatematicas.Basicas
 {
     public class Soma
     {

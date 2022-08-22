@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ByteBank.titular.cliente;
+using OO.ByteBank.titular.cliente;
 
-namespace ByteBank
+namespace OO.ByteBank
 {
     public class ContaCorrente
     {
