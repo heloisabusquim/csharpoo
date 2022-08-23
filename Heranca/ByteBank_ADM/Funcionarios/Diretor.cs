@@ -2,14 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Heranca.ByteBank_ADM.SistemaInterno;
 
 namespace Heranca.ByteBank_ADM.Funcionarios
 {
-    public class Diretor: Funcionario
+    public class Diretor: Autenticador
     {
         public Diretor(string nome, string cpf): base(nome, cpf, 5000.00)
         {
-            
+
         }
         public override double GetBonificacao()
         {

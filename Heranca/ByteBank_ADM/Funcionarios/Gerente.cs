@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Heranca.ByteBank_ADM.SistemaInterno;
 
 namespace Heranca.ByteBank_ADM.Funcionarios
 {
-    public class Gerente: Funcionario
+    public class Gerente: Autenticador
     {
         public Gerente(string nome, string cpf): base(nome, cpf, 4000.00)
         {

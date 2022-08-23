@@ -7,6 +7,7 @@ using Heranca.OperacoesMatematicas.Basicas;
 using Heranca.OperacoesMatematicas.Utilitario;
 using OO.Delivery;
 using Heranca.Library;
+using Heranca.ByteBank_ADM.SistemaInterno;
 
 // //********************************************************************************************************
 // // O R I E N T A Ç Ã O  A  O B J E T O S 
@@ -143,6 +144,27 @@ using Heranca.Library;
 //     Console.WriteLine("O número de funcionários registrados é: " + Funcionario.TotalFuncionarios);
 //     Console.WriteLine("O total de bonificações é de: " + gerenciador.GetTotalBonificacao());
 // }
+
+// //Gerando autenticação com senha
+LogarSistema();
+
+void LogarSistema()
+{
+    SistemaInterno sistemaInterno = new SistemaInterno();
+
+    Diretor maria = new Diretor("Maria Alencar", "124.899.566.78");
+    maria.User = "malencar";
+    maria.Senha = "123";
+
+    Gerente camila = new Gerente("Camila Oliveira", "345.678.543-32");
+    camila.User = "coliveira";
+    camila.Senha = "456";
+
+    sistemaInterno.Logar(maria, "malencar", "123"); //deve retornar true
+    sistemaInterno.Logar(camila, "coliveira", "789"); //deve retornar false
+
+}
+
 
 // //*********************************************************************************************
 
