@@ -13,6 +13,7 @@ using Heranca.ByteBank_ADM.Parceiro;
 // //********************************************************************************************************
 // // O R I E N T A Ç Ã O  A  O B J E T O S 
 
+
 // //ByteBank
 
 // Console.WriteLine("Boas vindas ao banco ByteBank!");
@@ -69,7 +70,12 @@ using Heranca.ByteBank_ADM.Parceiro;
 
 // Console.WriteLine("********************************************");
 
+
+
 // //********************************************************************************************************
+
+
+
 // //Delivery
 
 // Console.WriteLine("Boas vindas ao sistema de delivery!");
@@ -116,7 +122,13 @@ using Heranca.ByteBank_ADM.Parceiro;
 // 2- Criar uma forma do pedido poder ter mais itens distintos, não apenas um combo em específico;
 // */
 
+
+
+
 // //**************************************************************************************************************
+
+
+
 
 // //H E R A N Ç A  E  C L A S S E  A B S T R A T A
 
@@ -146,35 +158,43 @@ using Heranca.ByteBank_ADM.Parceiro;
 //     Console.WriteLine("O total de bonificações é de: " + gerenciador.GetTotalBonificacao());
 // }
 
+
+
+
 // //Gerando autenticação com senha
-LogarSistema();
+// LogarSistema();
 
-void LogarSistema()
-{
-    SistemaInterno sistemaInterno = new SistemaInterno();
+// void LogarSistema()
+// {
+//     SistemaInterno sistemaInterno = new SistemaInterno();
 
-    Diretor maria = new Diretor("Maria Alencar", "124.899.566.78");
-    maria.User = "malencar";
-    maria.Senha = "123";
+//     Diretor maria = new Diretor("Maria Alencar", "124.899.566.78");
+//     maria.User = "malencar";
+//     maria.Senha = "123";
 
-    Gerente camila = new Gerente("Camila Oliveira", "345.678.543-32");
-    camila.User = "coliveira";
-    camila.Senha = "456";
+//     Gerente camila = new Gerente("Camila Oliveira", "345.678.543-32");
+//     camila.User = "coliveira";
+//     camila.Senha = "456";
 
-    //utilizando interface IAutenticador
-    ParceiroComercial carlos = new ParceiroComercial();
-    carlos.User = "csilva";
-    carlos.Senha = "398";
+//     //utilizando interface IAutenticador
+//     ParceiroComercial carlos = new ParceiroComercial();
+//     carlos.User = "csilva";
+//     carlos.Senha = "398";
 
-    sistemaInterno.Logar(maria, "malencar", "123"); //deve retornar true
-    sistemaInterno.Logar(camila, "coliveira", "789"); //deve retornar false
-    sistemaInterno.Logar(carlos, "csilva", "398"); //deve retornar true
+//     sistemaInterno.Logar(maria, "malencar", "123"); //deve retornar true
+//     sistemaInterno.Logar(camila, "coliveira", "789"); //deve retornar false
+//     sistemaInterno.Logar(carlos, "csilva", "398"); //deve retornar true
 
 
-}
+// }
+
+
 
 
 // //*********************************************************************************************
+
+
+
 
 // //Operaçõess Matemáticas
 
@@ -184,7 +204,13 @@ void LogarSistema()
 // Console.WriteLine("Multiplicando valores... o resultado é:  " + operacoes.multiplicar.Calcular(87,198));
 // Console.WriteLine("Dividindo valores... o resultado é:  " + operacoes.dividir.Calcular(99,33));
 
+
+
+
 // //*************************************************************************************************
+
+
+
 
 // //Library
 // Fantasia lotr1 = new Fantasia("O Senhor dos Aneis: A Sociedade do Anel", "J. R. R. Tolkien", "9788533613379");
