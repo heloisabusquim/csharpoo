@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Heranca.ByteBank_ADM.Funcionarios;
+using Heranca.ByteBank_ADM.SistemaInterno;
 
-namespace Heranca.ByteBank_ADM.SistemaInterno
+namespace Heranca.ByteBank_ADM.Funcionarios
 {
-    public abstract class Autenticador : Funcionario
+    public abstract class AutenticadorFuncionario : Funcionario, IAutenticador
     {
-        public Autenticador(string nome, string cpf, double salario) : base(nome, cpf, salario)
+        protected AutenticadorFuncionario(string nome, string cpf, double salario) : base(nome, cpf, salario)
         {
         }
 

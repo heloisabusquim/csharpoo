@@ -8,6 +8,7 @@ using Heranca.OperacoesMatematicas.Utilitario;
 using OO.Delivery;
 using Heranca.Library;
 using Heranca.ByteBank_ADM.SistemaInterno;
+using Heranca.ByteBank_ADM.Parceiro;
 
 // //********************************************************************************************************
 // // O R I E N T A Ç Ã O  A  O B J E T O S 
@@ -160,8 +161,15 @@ void LogarSistema()
     camila.User = "coliveira";
     camila.Senha = "456";
 
+    //utilizando interface IAutenticador
+    ParceiroComercial carlos = new ParceiroComercial();
+    carlos.User = "csilva";
+    carlos.Senha = "398";
+
     sistemaInterno.Logar(maria, "malencar", "123"); //deve retornar true
     sistemaInterno.Logar(camila, "coliveira", "789"); //deve retornar false
+    sistemaInterno.Logar(carlos, "csilva", "398"); //deve retornar true
+
 
 }
 

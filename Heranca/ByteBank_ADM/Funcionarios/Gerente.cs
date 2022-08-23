@@ -6,7 +6,7 @@ using Heranca.ByteBank_ADM.SistemaInterno;
 
 namespace Heranca.ByteBank_ADM.Funcionarios
 {
-    public class Gerente: Autenticador
+    public class Gerente: AutenticadorFuncionario
     {
         public Gerente(string nome, string cpf): base(nome, cpf, 4000.00)
         {
