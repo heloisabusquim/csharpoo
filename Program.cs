@@ -315,7 +315,7 @@ using ArraysETiposGenericos;
 // int media = somaIdades / idades.Length;
 // Console.WriteLine(media); 
 
-//Arrays com ContaCorrente
+//Arrays com ContaCorrente - IN PROGRESS
 ListaDeContasCorrente contas = new ListaDeContasCorrente();
 
     ContaCorrente contaTeste = new ContaCorrente(111, "11111", "agencia 1");
