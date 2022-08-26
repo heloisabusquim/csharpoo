@@ -70,6 +70,17 @@ namespace OO.ByteBank
             return $"Agência: {this.numeroAgencia} ({this.nomeAgencia}) | Conta: {this.numeroConta}\nTitular: {this.titular.nome} | CPF: {this.titular.cpf}\nSaldo atual: {this.saldo}";
         }
 
+        public override bool Equals(object obj)
+        {
+            ContaCorrente outraConta = obj as ContaCorrente;
+
+            if(outraConta == null)
+            {
+                return false;
+            }
+            return numeroConta == outraConta.numeroConta && numeroAgencia == outraConta.numeroAgencia && nomeAgencia == outraConta.nomeAgencia;
+        }
+
         public static int TotalContasCriadas {get; set;}
 
     }

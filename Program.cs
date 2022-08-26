@@ -11,6 +11,7 @@ using Heranca.ByteBank_ADM.SistemaInterno;
 using Heranca.ByteBank_ADM.Parceiro;
 using StringsExpressoesRegularesClasseObjeto.ByteBank;
 using System.Text.RegularExpressions;
+using ArraysETiposGenericos;
 
 
 // //********************************************************************************************************
@@ -315,16 +316,16 @@ using System.Text.RegularExpressions;
 // Console.WriteLine(media); 
 
 //Arrays com ContaCorrente
-ContaCorrente[] contas = new ContaCorrente[]
-{
-    new ContaCorrente(123, "23345", "agencia central"),
-    new ContaCorrente(344, "2345a", "agencia sul"),
-    new ContaCorrente(455, "1234kj", "agencia norte"),
-    new ContaCorrente(455, "12213", "agencia leste")
-};
+ListaDeContasCorrente contas = new ListaDeContasCorrente();
 
-for(int indice = 0; indice < contas.Length; indice++)
-{
-    ContaCorrente contaAtual = contas[indice];
-    Console.WriteLine($"Conta {indice} {contaAtual.numeroConta} registrada!");
-}
+    ContaCorrente contaTeste = new ContaCorrente(111, "11111", "agencia 1");
+    contas.Adicionar(contaTeste);
+
+    contas.Adicionar(new ContaCorrente(123, "23345", "agencia central"));
+    contas.Adicionar(new ContaCorrente(344, "2345a", "agencia sul"));
+
+    for(int i = 0; i < contas.Tamanho; i++)
+    {
+        ContaCorrente itemAtual = contas.GetContaCorrenteNoIndice(i);
+        Console.WriteLine($"Item na posição {i} = Conta {itemAtual.numeroConta}/{itemAtual.numeroAgencia}");
+    }
