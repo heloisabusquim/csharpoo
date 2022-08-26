@@ -17,6 +17,17 @@ namespace OO.ByteBank.titular.cliente
             TotalClientesCadastrados++;
         }
 
+        public override bool Equals(Object obj)
+        {
+            Cliente convertendoObjetoEmCliente = obj as Cliente;
+
+            if(convertendoObjetoEmCliente == null)
+            {
+                return false;
+            }
+            return cpf == convertendoObjetoEmCliente.cpf;
+        }
+
         public static int TotalClientesCadastrados { get; set; }
     }
 

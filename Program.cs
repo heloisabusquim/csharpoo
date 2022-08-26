@@ -9,6 +9,9 @@ using OO.Delivery;
 using Heranca.Library;
 using Heranca.ByteBank_ADM.SistemaInterno;
 using Heranca.ByteBank_ADM.Parceiro;
+using StringsExpressoesRegularesClasseObjeto.ByteBank;
+using System.Text.RegularExpressions;
+
 
 // //********************************************************************************************************
 // // O R I E N T A Ç Ã O  A  O B J E T O S 
@@ -72,37 +75,38 @@ using Heranca.ByteBank_ADM.Parceiro;
 
 
 
+
 // //********************************************************************************************************
 
 
 
-// //Delivery
+//Delivery
 
-// Console.WriteLine("Boas vindas ao sistema de delivery!");
+Console.WriteLine("Boas vindas ao sistema de delivery!");
 
-// // //Populando produtos
-// Produto combo1 = new Produto(1);
-// Produto combo2 = new Produto(2);
-// Produto combo3 = new Produto(3);
+//Populando produtos
+Produto combo1 = new Produto(1);
+Produto combo2 = new Produto(2);
+Produto combo3 = new Produto(3);
 
-// // //Populando clientes e endereços
-// Contato cliente1 = new Contato("Helena Maria", "123.456.789-00", "(19)3456-2345");
-// cliente1.endereco = new Endereco("Rua 15", "34A", "", "Jardim Souzas", "Americana", "13456-234");
+//Populando clientes e endereços
+Contato cliente1 = new Contato("Helena Maria", "123.456.789-00", "(19)3456-2345");
+cliente1.endereco = new Endereco("Rua 15", "34A", "", "Jardim Souzas", "Americana", "13456-234");
 
-// Contato cliente2 = new Contato("Natasha Romanov", "987.654.321.00", "(19)3451-8769");
-// cliente2.endereco = new Endereco("Rua 89", "234", "Apto 23-A", "Jardim Amaranto", "Sumaré", "15478-231");
+Contato cliente2 = new Contato("Natasha Romanov", "987.654.321.00", "(19)3451-8769");
+cliente2.endereco = new Endereco("Rua 89", "234", "Apto 23-A", "Jardim Amaranto", "Sumaré", "15478-231");
 
-// //Recebendo pedidos
-// //Pedido 1 - endereço sem complemento, quantidade = 1
-// Pedido um = new Pedido();
-// um.numeroComanda = 1;
-// Console.WriteLine("Número da comanda: " + um.numeroComanda);
-// um.cliente = cliente1;
-// um.item = combo1;
-// um.item.quantidadeSolicitada = 1;
-// um.cliente.DadosCliente();
-// um.cliente.endereco.Entrega();
-// um.item.InfoCombos();
+//Recebendo pedidos
+//Pedido 1 - endereço sem complemento, quantidade = 1
+Pedido um = new Pedido();
+um.numeroComanda = 1;
+Console.WriteLine("Número da comanda: " + um.numeroComanda);
+um.cliente = cliente1;
+um.item = combo1;
+um.item.quantidadeSolicitada = 1;
+um.cliente.DadosCliente();
+um.cliente.endereco.Entrega();
+um.item.InfoCombos();
 
 // Console.WriteLine("********************************************");
 
@@ -222,3 +226,63 @@ using Heranca.ByteBank_ADM.Parceiro;
 // lotr2.FichaLivro();
 
 // Console.WriteLine("O número de livros registrados é: " + Livro.TotalLivrosRegistrados);
+
+
+
+//********************************************************************************************************
+
+
+//S T R I N G S  |  E X P R E S S Õ E S  R E G U L A R E S  |  C L A S S E  O B J E C T
+
+
+// //Estudo sobre strings, substring e métodos.
+
+// string url = "www.bytebank.com/cambio?moedaOrigem=real&moedaDestino=dolar&valor=1500";
+// ExtratorArgumentosURL extrator = new ExtratorArgumentosURL(url);
+// Console.WriteLine(extrator.GetValor("moedaOrigem")); //deve retornar: real
+// Console.WriteLine(extrator.GetValor("moedaDestino")); //deve retornar: dolar
+// Console.WriteLine(extrator.GetValor("valor")); //deve retornar 1500
+
+
+
+// //Estudo sobre expressões regulares.
+
+// string padraoNaoIdeal = "[0123456789][0123456789][0123456789][0123456789][-][0123456789][0123456789][0123456789][0123456789]";
+// string padraoMelhorado = "[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]";
+// string padraoMelhoradoAindaMais = "[0-9]{4}[-][0-9]{4}";
+// string padraoIdeal = "[0-9]{4,5}-?[0-9]{4}"; //{4,5} vai puxar 4 ou 5 caracteres | para - não precisa de [] e pra identificar se tem ou não o -, usa o ?
+// string texto = "meu numero de telefone é 3455-2334";
+
+// Match resultado = Regex.Match(texto, padraoIdeal);
+
+// Console.WriteLine(resultado.Value);
+
+// string padraoCPF = "[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}";
+// string meuCPF = "234.456.654-88";
+// string meuCPFSemPontos = "12345678900";
+
+// Match resultado1 = Regex.Match(meuCPF, padraoCPF);
+// Match resultado2 = Regex.Match(meuCPFSemPontos, padraoCPF);
+
+// Console.WriteLine(resultado1.Value);
+// Console.WriteLine(resultado2.Value);
+
+// //DÚVIDAS:
+// //1- Vi expressões como essa: ^\d{3}\.\d{3}\.\d{3}-\d{2}$ na internet, tentei aplicar aqui e não rolou :( , é um jeito diferente de aplicar?
+// // não entendi se esse é pra encontrar o valor nesse formato ou se é pra formatar o valor encontrado nesse padrão.
+// //*Aprofundar estudos aqui.
+
+
+
+
+// //Classe Object
+// ContaCorrente conta = new ContaCorrente(123, "334556", "agencia central");
+// conta.titular = new Cliente("Ana Maria", "123.122.333-11");
+// string contaToString = conta.ToString();
+// Console.WriteLine(conta);
+
+// Cliente carlos_1 = new Cliente("Carlos", "123.456.789-00");
+// Cliente carlos_2 = new Cliente("Carlos", "123.456.789-00");
+
+// Console.WriteLine(carlos_1.Equals(carlos_2)); //return true - nesse formato, está comparando os valores dos objetos e não suas referências.
+

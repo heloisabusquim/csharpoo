@@ -57,13 +57,20 @@ namespace OO.ByteBank
         }
 
         //desafio: criar método que mostra todas as informações da conta na tela
-        public void InformacoesConta()
-            {
-                Console.WriteLine("Agência: " + this.numeroAgencia + " (" + this.nomeAgencia + ")" + " | Conta: " + this.numeroConta);
-                Console.WriteLine("Titular: " + this.titular.nome + " | CPF: " + this.titular.cpf);
-                Console.WriteLine("Saldo atual: " + this.saldo);
-            }
+        //Improvement: interpolação com ToString
+        // public void InformacoesConta()
+        //     {
+        //         Console.WriteLine("Agência: " + this.numeroAgencia + " (" + this.nomeAgencia + ")" + " | Conta: " + this.numeroConta);
+        //         Console.WriteLine("Titular: " + this.titular.nome + " | CPF: " + this.titular.cpf);
+        //         Console.WriteLine("Saldo atual: " + this.saldo);
+        //     }
+
+        public override string ToString()
+        {
+            return $"Agência: {this.numeroAgencia} ({this.nomeAgencia}) | Conta: {this.numeroConta}\nTitular: {this.titular.nome} | CPF: {this.titular.cpf}\nSaldo atual: {this.saldo}";
+        }
 
         public static int TotalContasCriadas {get; set;}
+
     }
 }
