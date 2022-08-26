@@ -80,33 +80,33 @@ using System.Text.RegularExpressions;
 
 
 
-//Delivery
+// //Delivery
 
-Console.WriteLine("Boas vindas ao sistema de delivery!");
+// Console.WriteLine("Boas vindas ao sistema de delivery!");
 
-//Populando produtos
-Produto combo1 = new Produto(1);
-Produto combo2 = new Produto(2);
-Produto combo3 = new Produto(3);
+// //Populando produtos
+// Produto combo1 = new Produto(1);
+// Produto combo2 = new Produto(2);
+// Produto combo3 = new Produto(3);
 
-//Populando clientes e endereços
-Contato cliente1 = new Contato("Helena Maria", "123.456.789-00", "(19)3456-2345");
-cliente1.endereco = new Endereco("Rua 15", "34A", "", "Jardim Souzas", "Americana", "13456-234");
+// //Populando clientes e endereços
+// Contato cliente1 = new Contato("Helena Maria", "123.456.789-00", "(19)3456-2345");
+// cliente1.endereco = new Endereco("Rua 15", "34A", "", "Jardim Souzas", "Americana", "13456-234");
 
-Contato cliente2 = new Contato("Natasha Romanov", "987.654.321.00", "(19)3451-8769");
-cliente2.endereco = new Endereco("Rua 89", "234", "Apto 23-A", "Jardim Amaranto", "Sumaré", "15478-231");
+// Contato cliente2 = new Contato("Natasha Romanov", "987.654.321.00", "(19)3451-8769");
+// cliente2.endereco = new Endereco("Rua 89", "234", "Apto 23-A", "Jardim Amaranto", "Sumaré", "15478-231");
 
-//Recebendo pedidos
-//Pedido 1 - endereço sem complemento, quantidade = 1
-Pedido um = new Pedido();
-um.numeroComanda = 1;
-Console.WriteLine("Número da comanda: " + um.numeroComanda);
-um.cliente = cliente1;
-um.item = combo1;
-um.item.quantidadeSolicitada = 1;
-um.cliente.DadosCliente();
-um.cliente.endereco.Entrega();
-um.item.InfoCombos();
+// //Recebendo pedidos
+// //Pedido 1 - endereço sem complemento, quantidade = 1
+// Pedido um = new Pedido();
+// um.numeroComanda = 1;
+// Console.WriteLine("Número da comanda: " + um.numeroComanda);
+// um.cliente = cliente1;
+// um.item = combo1;
+// um.item.quantidadeSolicitada = 1;
+// um.cliente.DadosCliente();
+// um.cliente.endereco.Entrega();
+// um.item.InfoCombos();
 
 // Console.WriteLine("********************************************");
 
@@ -286,3 +286,45 @@ um.item.InfoCombos();
 
 // Console.WriteLine(carlos_1.Equals(carlos_2)); //return true - nesse formato, está comparando os valores dos objetos e não suas referências.
 
+
+
+//*******************************************************************************************
+
+
+
+// //A R R A Y S  |  T I P O S  G E N É R I C O S
+
+// //estudos com arrays
+// int[] idades = new int[5];
+
+// idades[0] = 23;
+// idades[1] = 12;
+// idades[2] = 67;
+// idades[3] = 39;
+// idades[4] = 50;
+
+// //Improvement no array:
+// int[] idades2 = new int[] {23,12,67,39,50};
+
+// int somaIdades = 0;
+// for(int indice = 0; indice < idades.Length; indice++)
+// {
+//     somaIdades += idades[indice];
+// }
+// int media = somaIdades / idades.Length;
+// Console.WriteLine(media); 
+
+//Arrays com ContaCorrente
+ContaCorrente[] contas = new ContaCorrente[]
+{
+    new ContaCorrente(123, "23345", "agencia central"),
+    new ContaCorrente(344, "2345a", "agencia sul"),
+    new ContaCorrente(455, "1234kj", "agencia norte"),
+    new ContaCorrente(455, "12213", "agencia leste")
+};
+
+for(int indice = 0; indice < contas.Length; indice++)
+{
+    ContaCorrente contaAtual = contas[indice];
+    Console.WriteLine($"Conta {indice} {contaAtual.numeroConta} registrada!");
+}
