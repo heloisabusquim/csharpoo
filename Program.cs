@@ -13,6 +13,7 @@ using StringsExpressoesRegularesClasseObjeto.ByteBank;
 using System.Text.RegularExpressions;
 using ArraysETiposGenericos;
 using csharpoo.ArraysETiposGenericos;
+using csharpoo.List_lambda_linq;
 
 
 // //********************************************************************************************************
@@ -330,3 +331,12 @@ using csharpoo.ArraysETiposGenericos;
 //         ContaCorrente itemAtual = contas[i];
 //         Console.WriteLine($"Item na posição {i} = Conta {itemAtual.numeroConta}/{itemAtual.numeroAgencia}");
 //     }
+
+List<int> idades = new List<int>();
+
+idades.AdicionarVarios(1, 5, 14, 25, 38, 61);
+
+for (int i = 0; i < idades.Count; i++)
+{
+    Console.WriteLine(idades[i]);
+}
