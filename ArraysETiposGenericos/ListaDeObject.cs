@@ -2,15 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using OO.ByteBank;
 
-//IN PROGRESS
-
-namespace ArraysETiposGenericos
+namespace csharpoo.ArraysETiposGenericos
 {
-    public class ListaDeContasCorrente
+    public class ListaDeObject
     {
-        private ContaCorrente[] _itens;
+        private object[] _itens;
         private int _proximaPosicao;
 
         public int Tamanho
@@ -21,14 +18,14 @@ namespace ArraysETiposGenericos
             }
         }
 
-        public ListaDeContasCorrente(int capacidadeInicial = 5)
+        public ListaDeObject(int capacidadeInicial = 5)
         {
-            _itens = new ContaCorrente[capacidadeInicial];
+            _itens = new object[capacidadeInicial];
             _proximaPosicao = 0;
 
         }
 
-        public void Adicionar(ContaCorrente item)
+        public void Adicionar(object item)
         {
             VerificarCapacidade(_proximaPosicao + 1);
 
@@ -37,16 +34,16 @@ namespace ArraysETiposGenericos
             _itens[_proximaPosicao] = item;
             _proximaPosicao++;
 
-            Console.WriteLine($"Conta {item.numeroConta} salva");
+            Console.WriteLine($"Conta salva");
         }
 
-        public void Remover(ContaCorrente item)
+        public void Remover(object item)
         {
             int indiceItem = -1;
 
             for(int i = 0; i < _proximaPosicao; i++)
             {
-                ContaCorrente itemAtual = _itens[i];
+                object itemAtual = _itens[i];
 
                 if(itemAtual.Equals(item))
                 {
@@ -63,10 +60,10 @@ namespace ArraysETiposGenericos
             _proximaPosicao--;
             _itens[_proximaPosicao] = null;
             
-            Console.WriteLine($"Conta {item.numeroConta} removida");
+            Console.WriteLine($"Conta removida");
         }
 
-        public ContaCorrente GetItemNoIndice(int indice)
+        public object GetItemNoIndice(int indice)
         {
             if(indice < 0 || indice >= _proximaPosicao)
             {
@@ -76,7 +73,7 @@ namespace ArraysETiposGenericos
             return _itens[indice];
         }
 
-        public ContaCorrente this[int indice]
+        public object this[int indice]
         {
             get
             {
@@ -96,7 +93,7 @@ namespace ArraysETiposGenericos
                 novoTamanho = tamanhoNecessario;
             }
 
-            ContaCorrente[] novoArray = new ContaCorrente[novoTamanho];
+            object[] novoArray = new object[novoTamanho];
 
             for(int indice = 0; indice < _itens.Length; indice++)
             {

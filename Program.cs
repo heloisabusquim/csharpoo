@@ -12,6 +12,7 @@ using Heranca.ByteBank_ADM.Parceiro;
 using StringsExpressoesRegularesClasseObjeto.ByteBank;
 using System.Text.RegularExpressions;
 using ArraysETiposGenericos;
+using csharpoo.ArraysETiposGenericos;
 
 
 // //********************************************************************************************************
@@ -316,16 +317,16 @@ using ArraysETiposGenericos;
 // Console.WriteLine(media); 
 
 //Arrays com ContaCorrente - IN PROGRESS
-ListaDeContasCorrente contas = new ListaDeContasCorrente();
+// ListaDeContasCorrente contas = new ListaDeContasCorrente();
 
-    ContaCorrente contaTeste = new ContaCorrente(111, "11111", "agencia 1");
-    contas.Adicionar(contaTeste);
+//     ContaCorrente contaTeste = new ContaCorrente(111, "11111", "agencia 1");
+//     contas.Adicionar(contaTeste);
 
-    contas.Adicionar(new ContaCorrente(123, "23345", "agencia central"));
-    contas.Adicionar(new ContaCorrente(344, "2345a", "agencia sul"));
+//     contas.Adicionar(new ContaCorrente(123, "23345", "agencia central"));
+//     contas.Adicionar(new ContaCorrente(344, "2345a", "agencia sul"));
 
-    for(int i = 0; i < contas.Tamanho; i++)
-    {
-        ContaCorrente itemAtual = contas.GetContaCorrenteNoIndice(i);
-        Console.WriteLine($"Item na posição {i} = Conta {itemAtual.numeroConta}/{itemAtual.numeroAgencia}");
-    }
+//     for(int i = 0; i < contas.Tamanho; i++)
+//     {
+//         ContaCorrente itemAtual = contas[i];
+//         Console.WriteLine($"Item na posição {i} = Conta {itemAtual.numeroConta}/{itemAtual.numeroAgencia}");
+//     }
