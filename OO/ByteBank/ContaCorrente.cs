@@ -6,7 +6,7 @@ using OO.ByteBank.titular.cliente;
 
 namespace OO.ByteBank
 {
-    public class ContaCorrente
+    public class ContaCorrente : IComparable
     {
         public Cliente titular {get; set;}
         public string numeroConta {get; set;}
@@ -79,6 +79,23 @@ namespace OO.ByteBank
                 return false;
             }
             return numeroConta == outraConta.numeroConta && numeroAgencia == outraConta.numeroAgencia && nomeAgencia == outraConta.nomeAgencia;
+        }
+
+        public int CompareTo(object? obj)
+        {
+            var outraConta = obj as ContaCorrente;
+
+            if(numeroAgencia < outraConta.numeroAgencia)
+            {
+                return -1;
+            }
+
+            if(numeroAgencia == outraConta.numeroAgencia)
+            {
+                return 0;
+            }
+
+            return 1;
         }
 
         public static int TotalContasCriadas {get; set;}

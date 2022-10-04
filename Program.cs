@@ -332,11 +332,68 @@ using csharpoo.List_lambda_linq;
 //         Console.WriteLine($"Item na posição {i} = Conta {itemAtual.numeroConta}/{itemAtual.numeroAgencia}");
 //     }
 
-List<int> idades = new List<int>();
+// List<int> idades = new List<int>();
 
-idades.AdicionarVarios(1, 5, 14, 25, 38, 61);
+// idades.AdicionarVarios(100, 55, 14, 25, 1, 38, 61);
 
-for (int i = 0; i < idades.Count; i++)
+// for (int i = 0; i < idades.Count; i++)
+// {
+//     Console.WriteLine(idades[i]);
+// }
+
+// List<string> nomes = new List<string>();
+
+// nomes.AdicionarVarios("Roberto", "Maria", "Marcos", "Ana");
+
+// foreach(string nome in nomes)
+// {
+//     Console.WriteLine(nome);
+// }
+
+// //Usando var
+// var conta1 = new ContaCorrente(123, "1234-a", "Central");
+// var gerenciador = new GerenciadorBonificacao();
+// var gerenciadores = new List<GerenciadorBonificacao>();
+
+// conta1.Depositar(123.00); //compilador entende que conta é do tipo ContaCorrente.
+// //Por baixo dos panos é o mesmo que: ContaCorrente conta = new ContaCorrente();
+
+// //Usando sort
+// idades.Sort();
+
+// foreach(var idade in idades)
+// {
+//     Console.WriteLine(idade);
+// }
+
+// nomes.Sort();
+
+// foreach(var nome in nomes)
+// {
+//     Console.WriteLine(nome);
+// }
+
+//IComparable
+var contas = new List<ContaCorrente>()
 {
-    Console.WriteLine(idades[i]);
+    new ContaCorrente(453, "1234-a", "central"),
+    null,
+    new ContaCorrente(123, "3242-d", "sul"),
+    new ContaCorrente(999, "6578-b", "norte"),
+    new ContaCorrente(332, "9876-c", "sudeste")
+};
+
+// contas.Sort();
+
+// contas.Sort(new ComparadorContaCorrentePorAgencia());
+
+
+var contasOrdenadas = contas
+    .Where(conta => conta != null)
+    .OrderBy(conta => conta.numeroAgencia);
+
+foreach(var conta in contasOrdenadas)
+{
+    Console.WriteLine($"Agencia: {conta.numeroAgencia} ({conta.nomeAgencia}) | Conta: {conta.numeroConta}");
 }
+
